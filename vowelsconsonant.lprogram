@@ -1,0 +1,24 @@
+##code##
+
+%{
+#include<stdio.h>
+%}
+
+vowels      [aeiouAEIOU]
+consonant   [a-zA-Z]
+
+%%
+
+{vowels}       {printf("%s is an vowels\n",yytext);}
+{consonant}    {printf("%s is an consonant\n",yytext);}
+[\t\n]        {/* ignore whitespace */}
+
+%%
+
+int main()
+{
+yylex();
+return 0;
+}
+
+
